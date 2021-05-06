@@ -3,15 +3,15 @@ class Ground {
       var options = {
           isStatic: true
       }
-      Matter.Bodies.polygon(x, y, sides, radius);
-      this.sides = sides;
+      this.body = Bodies.circle(x, y, radius, options);
       this.radius = radius;
       World.add(world, this.body);
     }
+
     display(){
       var pos =this.body.position;
-      circleMode(CENTER);
+      ellipseMode(CENTER);
       fill("brown");
-      circle(pos.x, pos.y, this.sides, this.radius);
+      ellipse(pos.x, pos.y, this.radius, this.radius);
     }
   };
